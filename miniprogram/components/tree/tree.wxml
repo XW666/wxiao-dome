@@ -1,0 +1,97 @@
+<!--component/tree/tree.wxml-->
+<view class="tree">
+  <view class="tree-seach">
+    <input class="input" value='{{seachValue}}' bindinput="int_seach" placeholder="请选择"></input>
+    <view class="yzm">
+      <mp-icon icon="arrow" color="#C2C2C2" size="{{10}}"></mp-icon>
+    </view>
+  </view>
+  <view class="tree-cen" wx:if="{{!seachValue}}">
+    <block wx:for="{{treeList}}" wx:key="key" wx:for-index="perindex">
+      <view class="tree-node">
+        <view class="tree-node_content">
+          <!-- 第一级 -->
+          <span
+            class="tree-node_checkbox {{item.check ? 'is-check' : ''}} {{item.indeterminate ? '' : 'is-indeterminate'}}">
+            <span class="checkbox_inner" data-pid="{{perindex}}" catchtap="boxTap"></span>
+          </span>
+          <span class="tree-node_label" data-pid="{{perindex}}" catchtap="lableTap">{{item.label}}</span>
+        </view>
+        <view class="tree-node_children" wx:if="{{item.child && item.children}}">
+
+          <block wx:for="{{item.children}}" wx:for-index="chidindex" wx:for-item="itemChild" wx:key="key">
+            <view class="tree-node-h">
+              <!-- 虚线 -->
+              <view class="tree-hr"></view>
+              <view class="tree-node_content">
+                <!-- 第二级 -->
+                <span
+                  class="tree-node_checkbox {{itemChild.check ? 'is-check' : ''}} {{itemChild.indeterminate ? '' : 'is-indeterminate'}}">
+                  <span class="checkbox_inner" data-pid="{{perindex}}" data-cid='{{chidindex}}'
+                    catchtap="boxChidTap"></span>
+                </span>
+                <span class="tree-node_label" data-pid="{{perindex}}" data-cid='{{chidindex}}'
+                  catchtap="lableChidTap">{{itemChild.label}}</span>
+              </view>
+            </view>
+            <view class="tree-node_children" wx:if="{{itemChild.child && itemChild.children}}">
+              <block wx:for="{{itemChild.children}}" wx:for-index="sonindex" wx:for-item="itemSon" wx:key="key">
+                <view class="tree-node-h">
+                  <!-- 虚线 -->
+                  <view class="tree-hr"></view>
+                  <view class="tree-node_content">
+                    <!-- 第三级 -->
+                    <span
+                      class="tree-node_checkbox {{itemSon.check ? 'is-check' : ''}} {{itemSon.indeterminate ? '' : 'is-indeterminate'}}">
+                      <span class="checkbox_inner" data-pid="{{perindex}}" data-cid='{{chidindex}}'
+                        data-sid="{{sonindex}}" catchtap="boxSonTap"></span>
+                    </span>
+                    <span class="tree-node_label" data-pid="{{perindex}}" data-cid='{{chidindex}}'
+                      data-sid="{{sonindex}}" catchtap="lableSonTap">{{itemSon.label}}</span>
+                  </view>
+                </view>
+                <view class="tree-node_children" wx:if="{{itemSon.child && itemSon.children}}">
+                  <block wx:for="{{itemSon.children}}" wx:for-index="ssonindex" wx:for-item="itemSson" wx:key="key">
+                    <view class="tree-node-h">
+                      <!-- 虚线 -->
+                      <view class="tree-hr"></view>
+                      <view class="tree-node_content">
+                        <!-- 第四级 -->
+                        <span
+                          class="tree-node_checkbox {{itemSson.check ? 'is-check' : ''}} {{itemSson.indeterminate ? '' : 'is-indeterminate'}}">
+                          <span class="checkbox_inner" data-pid="{{perindex}}" data-cid='{{chidindex}}'
+                            data-sid="{{sonindex}}" data-ssid="{{ssonindex}}" catchtap="boxSSonTap"></span>
+                        </span>
+                        <span class="tree-node_label" data-pid="{{perindex}}" data-cid='{{chidindex}}'
+                          data-sid="{{sonindex}}">{{itemSson.label}}</span>
+                      </view>
+                    </view>
+                  </block>
+
+                </view>
+              </block>
+            </view>
+          </block>
+        </view>
+      </view>
+    </block>
+  </view>
+  <view class="tree-footer" wx:if="{{!seachValue}}">
+    <view class="tree-btn primary">确定</view>
+  </view>
+  <view class="tree-cen" wx:if="{{seachValue}}">
+     <block wx:for="{{seachTreeList}}" wx:key="key" wx:for-index="perindex">
+        <view class="tree-node">
+          <view class="tree-node_content">
+          <!-- 第一级 -->
+          <span
+            class="tree-node_checkbox {{item.check ? 'is-check' : ''}}">
+            <span class="checkbox_inner" data-pid="{{perindex}}" catchtap="seachBoxTap"></span>
+          </span>
+          <span class="tree-node_label">{{item.label}}</span>
+         <view class="tree-node_tit">{{item.text}}</view>
+        </view>
+        </view>
+     </block>
+  </view>
+</view>

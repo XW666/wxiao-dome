@@ -1,0 +1,21 @@
+<!--component/tree-node/tree-node.wxml-->
+<view class="tree-view">
+  <block wx:for="{{treeList}}" wx:key="key" wx:for-index="perindex">
+      <view class="tree-node">
+        <view class="tree-node_content">
+          <!-- 第一级 -->
+          <span
+            class="tree-node_radio {{item.check ? 'is-check' : ''}} {{item.indeterminate ? '' : 'is-indeterminate'}}">
+            <span class="radio_inner" data-pid="{{item.id}}" catchtap="boxTap"></span>
+          </span>
+          <span class="tree-node_label" data-pid="{{item.pid}}" catchtap="boxTap">{{item.label}}</span>
+        </view>
+        <view class="tree-node_children" >
+        <!-- 递归i组件  bind:treeRadioTap 递归组件事件 -->
+        <tree-node treeList="{{item.children}}" bind:treeRadioTap='getMask'></tree-node>
+        </view>
+
+      </view>
+  
+    </block>
+</view>

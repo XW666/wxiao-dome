@@ -1,0 +1,13 @@
+<!--logs.wxml-->
+<view class="container log-list">
+
+  <view class="lock-box">
+    <view  class="lock-msg">{{msg}}</view>
+    
+ 
+    <canvas disable-scroll="true" force-use-old-canvas="true" class="lock-cav" bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE" canvas-id="locker" style="width:686rpx;height:686rpx;"></canvas>
+  
+    <view catchtap="lockreset"  class="lock-title {{titleColor}}">{{title}}</view>
+   
+</view>
+</view>

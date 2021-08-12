@@ -1,0 +1,23 @@
+
+
+  //金额千分位加逗号
+var threeNumForTwo = {
+
+  money_three_for_two_thousands: function(amount, place) {
+    var num = parseFloat(amount).toFixed(2).toString(), result = '';
+    var arr = num.split('.')
+    num = arr[0]
+    while(num.length > 3) {
+      result = ',' + num.slice(-3) + result;
+      num = num.slice(0, num.length - 3);
+    }
+    if (num) {
+      result = num + result;
+    }
+    return result + '.' + arr[1];
+  }
+}
+ 
+module.exports = {
+  money_three_for_two_thousands: threeNumForTwo.money_three_for_two_thousands //暴露接口调用
+}

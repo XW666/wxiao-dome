@@ -1,0 +1,51 @@
+/* component/tree/tree.wxss */
+@import '../../style/common.wxss';
+.tree{
+  min-width: 500rpx;
+background: #FFFFFF;
+box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.08);
+border-radius: 4px;
+font-size: 28rpx;
+}
+
+.tree-node{
+  padding: 0 40rpx 20rpx 40rpx;
+}
+.tree-node_content{
+  padding-top: 20rpx;
+}
+
+
+
+.tree-node_children{
+  padding-left: 50rpx;
+  border-left: 2rpx dashed #D9D9D9;
+  margin-left: 12rpx;
+  
+}
+.tree-node-h{
+  position: relative;
+}
+.tree-hr{
+  height: 20rpx;
+  width: 40rpx;
+  left: -46rpx;
+  top: 20rpx;
+  position: absolute;
+  border-bottom: 2rpx dashed #D9D9D9;
+}
+
+.tree-footer{
+ padding: 12rpx 30rpx;
+  border-top: 2rpx solid #E9E9E9;
+  text-align: right;
+}
+.tree-btn{
+  font-size: 24rpx;
+  display: inline-block;
+  width: 80rpx;
+height: 52rpx;
+line-height: 52rpx;
+border-radius: 5px;
+text-align: center;
+}

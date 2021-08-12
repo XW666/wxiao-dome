@@ -1,0 +1,52 @@
+<!--component/select/select.wxml-->
+<view class="select">
+  <view class="tree-seach" catchtap="seachTap">
+    <view class="tree-seach-l" wx:if="{{multiple}}">
+      <!-- 多选 -->
+      <view class="select_tags" wx:if="{{checkList.length > 0}}">
+        <span class="select_tags-text" wx:for="{{checkList}}" wx:key="key" wx:for-index="pid">
+          {{item.label}}  <span data-pid="{{pid}}" class="select-tag_close" catchtap="tagClose">X</span>
+        </span>
+      </view>
+      <view class=" tree-seach-c" wx:else>
+        请选择
+      </view>
+    </view>
+    <view class="tree-seach-l " wx:else>
+      <!-- 单选 -->
+      <view class="select-tit" wx:if="{{value}}">{{value}}</view>
+      <view class=" tree-seach-c" wx:else>
+        请选择
+      </view>
+    </view>
+    <view class="yzm">
+      <mp-icon icon="arrow" color="#C2C2C2" size="{{10}}"></mp-icon>
+    </view>
+  </view>
+  <view hidden="{{!seachShow}}">
+    <!-- 搜素 -->
+    <view class="tree-seach">
+      <view class="yzm">
+        <mp-icon icon="arrow" color="#C2C2C2" size="{{10}}"></mp-icon>
+      </view>
+      <input class="input" value='{{value2}}' bindinput="int_seach" placeholder="搜素"></input>
+    </view>
+    <!-- 内容 -->
+    <view class="select-dropdown_list">
+      <view wx:if="{{multiple && selectList.length>0}}" class="select-dropdown_item {{allCheck ? 'is-check' : '' }} {{indeterminate ? '' : 'is-indeterminate'}}"
+         catchtap="allDownTap">
+          <span class="checkbox_inner" >
+          </span>
+          <span class="tree-node_label">全选</span>
+        </view>
+      <block wx:for="{{selectList}}" wx:key="key" wx:for-index="perindex">
+        <view class="select-dropdown_item {{checkObj[item.value]===item.value ? 'is-check' : '' }}"
+          data-pid="{{perindex}}" catchtap="downTap">
+          <span class="checkbox_inner" wx:if="{{multiple}}">
+          </span>
+          <span class="tree-node_label"> {{item.label}}</span>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

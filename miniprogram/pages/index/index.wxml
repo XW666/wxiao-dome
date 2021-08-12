@@ -1,0 +1,28 @@
+<!--index.wxml-->
+<view class="container">
+ 
+  <!-- 用户 openid -->
+  <view class="userinfo">
+  <!-- 阿里彩色图图标用法 -->
+  <iconfont class="icon-font" name="gongzuojingli" size='36'></iconfont>
+   <!-- 阿里图标的用法 -->
+    <i class="iconfont icon-yonghuming"></i>
+    <view class="userinfo-nickname-wrapper">
+      <button class="userinfo-nickname" bindtap="onDemo">点击进入demo页面</button>
+    </view>
+   
+  </view>
+  <view class="user-btn">
+      <button class="userinfo-nickname" bindtap="onLogs">点击进入手势密码页面</button>
+    </view>
+  <!-- 上传图片 -->
+  <view class="uploader">
+    <view class="uploader-text" bindtap="doUpload">
+      <text>上传图片</text>
+    </view>
+    <view class="uploader-container" wx:if="{{imgUrl}}">
+      <image class="uploader-image" src="{{imgUrl}}" mode="aspectFit" bindtap="previewImg"></image>
+    </view>
+  </view>
+
+</view>

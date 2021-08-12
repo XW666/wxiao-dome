@@ -1,0 +1,30 @@
+<template name="uploadName">
+  <view class="upload" wx:if="{{type=='file'}}">
+    <view class="upload-btn" catchtap="uploadWord"><i class="iconfont icon-daochu-01"></i> 选择文件</view>
+    <view class="upload-list" wx:if="{{filename}}">
+      <view class="upload-icon">w</view>
+      <view class="upload-txt">
+        <view class="upload-n">
+          {{filename}}
+        </view>
+        <view class="upload-b">
+          <span>预览</span>
+          <span>预览</span>
+          <span catchtap="uploadClose">删除</span>
+        </view>
+      </view>
+
+    </view>
+  </view>
+  <view class="upload" wx:if="{{type=='image'}}">
+    <view class="upload-btn" catchtap="uploadImage">上传</view>
+    <view class="upload-list" wx:if="{{imgName}}">
+       <view class="upload-img">
+         <span class="upload-close" catchtap="uploadImgClose">
+           X
+         </span>
+        <image src="{{imgName}}"></image>
+       </view>
+    </view>
+  </view>
+</template>

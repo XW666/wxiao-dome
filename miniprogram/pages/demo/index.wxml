@@ -1,0 +1,212 @@
+<view>
+    <view style="width:95%;margin:0 auto;">
+   
+        <view class="title">
+            组织树单选
+        </view>
+        <view class="radio-tree">
+            <view class="tree-seach">
+                <input class="input" value='{{seachValue}}' bindinput="int_seach" bindfocus="inputFoucus" bindblur="inputBlur" placeholder="请选择"></input>
+                <view class="yzm">
+                    <mp-icon wx:if="{{!seachValue}}" icon="arrow" color="#C2C2C2" size="{{10}}"></mp-icon>
+                    <mp-icon wx:else icon="close2" color="#C2C2C2" size="{{16}}" catchtap="iconTap"></mp-icon>
+                </view>
+            </view>
+            <view class="radio-cen" wx:if="{{radioShow && !seachRadioShow}}">
+                <tree-node treeList='{{treeList}}' bind:treeRadioTap='treeRadioTap'></tree-node>
+            </view>
+            <view class="radio-cen" wx:if="{{seachRadioShow}}">
+            <view wx:if="{{seachTreeList.length > 0}}">
+                <block wx:for="{{seachTreeList}}" wx:key="key" wx:for-index="perindex">
+                    <view class="tree-node">
+                        <view class="tree-node_content">
+                            <!-- 第一级 -->
+                            <span class="tree-node_radio {{item.check ? 'is-check' : ''}}">
+                                <span class="radio_inner" data-item="{{item}}" catchtap="seachRadioTap"></span>
+                            </span>
+                            <span class="tree-node_label">{{item.label}}</span>
+                            <view class="tree-node_tit">{{item.text}}</view>
+                        </view>
+                    </view>
+                </block>
+            </view>
+            <view class="tree-seach-no" wx:else>
+               暂无匹配值
+            </view>
+            </view>
+        </view>
+       
+        <view class="mt-10">
+            <button class="button button-default" >默认按钮</button>
+        </view>
+        <view class="mt-10">
+            <button class="button button-default" disabled="{{true}}">默认按钮禁止操作</button>
+        </view>
+        <view class="mt-10">
+            <button class="button button-mini">小号按钮</button>
+        </view>
+        <view class="mt-10">
+            <button class="button button-default button-radius">圆角的</button>
+        </view>
+        <view class="mt-10">
+            <button class="button button-default"><i class="iconfont icon-liwu"></i>带icon</button>
+        </view>
+        <view class="mt-10">
+            <button class="button button-radius button-border">有边框</button>
+        </view>
+        <view class="mt-10">
+            <button class="button button-layout100">通栏按钮</button>
+        </view>
+        <view class="mt-10">
+            <button class="button button-layout100 button-radius">带圆角</button>
+        </view>
+        <view class="title">
+            复选框
+        </view>
+        <text>
+            竖向排列
+        </text>
+        <view class="mt-10">
+            <van-checkbox-group value="{{ result }}" bind:change="onChange2">
+                <van-checkbox shape="square" name="a" icon-size="28rpx" disabled>复选框 a</van-checkbox>
+                <van-checkbox shape="square" name="b" icon-size="28rpx">复选框 b</van-checkbox>
+                <van-checkbox shape="square" name="c" icon-size="28rpx">复选框 c</van-checkbox>
+            </van-checkbox-group>
+        </view>
+        <text>
+            横向排列
+        </text>
+        <view class="mt-10">
+            <van-checkbox-group value="{{ result }}" bind:change="onChange2" class="van-checkbox-inline">
+                <van-checkbox shape="square" name="a" icon-size="28rpx">复选框 a</van-checkbox>
+                <van-checkbox shape="square" name="b" icon-size="28rpx">复选框 b</van-checkbox>
+                <van-checkbox shape="square" name="c" icon-size="28rpx">复选框 c</van-checkbox>
+            </van-checkbox-group>
+        </view>
+
+        <view class="title">
+            开关
+        </view>
+        <view>
+            <view>默认</view>
+            <van-switch checked="{{ checked }}" bind:change="onChange" active-text="开" inactive-text="关" />
+        </view>
+        <view>
+            <view>自定义大小</view>
+            <van-switch checked="{{ checked }}" size="24px" bind:change="onChange" />
+        </view>
+        <view>
+            <view>改颜色</view>
+            <van-switch checked="{{ checked }}" size="24px" bind:change="onChange" active-color="#07c160"
+                inactive-color="#ee0a24" />
+        </view>
+        <view>
+            <view>带文字</view>
+            <van-switch checked="{{ checked }}" size="24px" bind:change="onChange" active-text="开" inactive-text="关" />
+        </view>
+        <view>
+            <view>禁用的</view>
+            <van-switch disabled checked="{{ checked }}" size="24px" bind:change="onChange" />
+        </view>
+      
+        <view class="mt-10"></view>
+        <view class="title">
+            上传图片
+        </view>
+        <view class="mt-10">
+            <uploader bind:uploadImg='uploadImg'></uploader>
+        </view>
+        <view class="mt-10">
+            <text>自定义大小</text>
+            <uploader bind:uploadImg='uploadImg' width='400' height='240'></uploader>
+        </view>
+
+        <view class="title">
+            提示框
+        </view>
+        <view class="mt-10">
+            <!-- 需要引入对应的组件Id固定不可变 -->
+            <!-- 需要在onReady钩子中注册组件 -->
+            <!-- <toast id='toast'></toast>
+            <button class="button button-mini" data-type='success' bindtap="showTost">成功</button>
+            <button class="button button-mini" data-type='error' bindtap="showTost">失败</button>
+            <button class="button button-mini" data-type='warning' bindtap="showTost">警告</button>
+            <button class="button button-mini" data-type='info' bindtap="showTost">信息</button> -->
+        </view>
+
+
+
+
+        <!--index.wxml-->
+        <view class="title">
+            搜索框
+        </view>
+        <view>
+
+            <view class="page__bd">
+                <mp-searchbar bindselectresult="selectResult" search="{{search}}"></mp-searchbar>
+            </view>
+            <view class="title">
+                日期选择
+            </view>
+            <view class="section">
+                <view class="section__title">日期选择</view>
+                <view class="section_picker">
+                    <picker mode="multiSelector" value="{{multiIndex}}" range-key='name' range="{{objectMultiArray}}"
+                        bindchange="bindMultiPickerChange">
+
+                        <view class="picker" wx:if="{{multiIndex.length > 0}}">
+                            {{objectMultiArray[0][multiIndex[0]].id}}:{{objectMultiArray[1][multiIndex[1]].id}}:{{objectMultiArray[2][multiIndex[2]].id}}
+                            <mp-icon icon="arrow" color="#8C8C8C" size="{{12}}"></mp-icon>
+                        </view>
+                        <view class="picker" wx:else>
+                            请选择日期 <mp-icon extClass='right-icon' icon="arrow" color="#8C8C8C" size="{{12}}"></mp-icon>
+                        </view>
+                    </picker>
+                </view>
+            </view>
+            <view class="title">
+                上传文件
+            </view>
+            <view class="userinfo">
+                <!-- <h4>上传图片</h4>
+            <import src="../../template/upload/upload.wxml"></import>
+            <template is="uploadName" data="{{imgName,type}}" ></template> -->
+                <import src="../../template/upload/upload.wxml"></import>
+                <template is="uploadName" data="{{filename,type}}"></template>
+
+                <!-- <view class="upload" catchtap="uploadImage">上传图片</view>
+        <view class="upload-text" wx:if="{{imgName}}">上传图片名字：<image src="{{imgName}}"></image> </view> -->
+            </view>
+            <view class="title">
+                组织树多选
+            </view>
+            <tree></tree>
+
+            <view class="cen">
+
+                <view class="title">
+                    下拉单选
+                </view>
+                <select options="{{options}}"></select>
+                <view class="title">
+                    下拉多选
+                </view>
+                <select multiple="{{true}}" options="{{options}}"></select>
+            </view>
+
+            <van-cell>1111111111</van-cell>
+        </view>
+    </view>
+
+<!-- wxss使用案例 -->
+<wxs module="threeNumForTwo" src="../../utils/filter.wxs"></wxs>
+<view class="payroll-ul-l">收入合计</view>
+    <view class="payroll-ul-r">￥{{threeNumForTwo.money_three_for_two_thousands(configByObjectVoOne) || 0.00}}</view>
+<!-- 公众底部组件 -->
+<!-- 
+    <import src="../../template/footercopy/footercopy.wxml"></import>
+  <template is="copyright" /> -->
+
+
+</view>

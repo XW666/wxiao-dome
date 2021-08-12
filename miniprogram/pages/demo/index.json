@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    "van-checkbox": "../../components/thirdParty/checkbox/index",
+    "van-checkbox-group": "../../components/thirdParty/checkbox-group/index",
+    "van-switch": "../../components/thirdParty/switch/index",
+    "uploader": "../../components/uploader/uploader",
+    "tree":"../../components/tree/tree",
+    "select":"../../components/select/select",
+    "van-cell":"../../components/thirdParty/cell/index",
+    "tree-node":"../../components/tree-node/tree-node"
+  }
+}

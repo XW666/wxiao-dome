@@ -1,0 +1,15 @@
+<!--component/uploader/uploader.wxml-->
+<view class="uploader-view">
+  <view class="uploader-main" style="{{domStyles}}">
+      <view class="uploader-upload-btn" bindtap="uploadImg" wx:if="{{uplaodSrc === ''}}">
+        <!-- 上传按钮 -->
+        <view class="uploader-camera-icon"></view>
+      </view>
+      <!-- 上传后显示图片 -->
+      <view class="uploader-show-box" wx:if="{{uplaodSrc !== ''}}">
+          <image mode="aspectFit" src="{{uplaodSrc}}" data-src='{{uplaodSrc}}' bindtap="showImg"></image>
+          <!-- 删除图片按钮 -->
+          <view class="uploader-del-btn" bindtap="delImg"></view>
+      </view>
+  </view>
+</view>

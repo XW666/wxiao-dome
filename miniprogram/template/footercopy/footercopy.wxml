@@ -1,0 +1,12 @@
+<template name="copyright">
+  <view class="copyright">
+    <view class="copy-m">
+     <view class="copy-l"></view>
+     <view class="copy-c">
+      <image class="logo" mode='scaleToFill' src="https://tranderpay.oss-cn-shanghai.aliyuncs.com/wxmp/logo.png"></image>
+     </view>
+     <view class="copy-l"></view>
+    </view>
+    <view class="copy-t">乾薪通技术支持 版权所有</view>
+  </view>
+</template>

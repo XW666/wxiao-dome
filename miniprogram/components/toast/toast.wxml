@@ -1,0 +1,7 @@
+
+<!--来源： https://www.cnblogs.com/gaosong-shuhong/p/9761238.html -->
+<view class='wx-toast-box' animation="{{animationData}}">
+  <view class='wx-toast-content {{typeClass}}'>
+    <view class='wx-toast-toast'><i class="iconfont {{icon}}" wx:if="{{icon !== ''}}"></i>{{ content }}</view>
+  </view>
+</view>

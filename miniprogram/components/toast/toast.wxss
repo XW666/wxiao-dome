@@ -1,0 +1,55 @@
+@import  '../../style/iconfont.wxss';
+.wx-toast-box{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  position: fixed;
+  z-index: 999;
+  top:40rpx;
+  opacity: 0;
+  position: none;
+}
+.wx-toast-content{
+  min-width: 240rpx;
+  border-radius:8rpx;
+  padding:12rpx 56rpx;
+}
+
+.info{
+  background: #EAF5FC;
+  border: 2rpx solid #138DD9;
+}
+.info .wx-toast-toast>i{
+  color: #138DD9;
+}
+.success{
+  background: #F2FAE8;
+  border: 2rpx solid #6CC902;
+}
+.success .wx-toast-toast>i{
+  color: #6CC902;
+}
+.error{
+  background: #FCEBEA;
+  border: 2rpx solid #E2231A;
+}
+.error .wx-toast-toast>i{
+  color: #E2231A;
+}
+.warning{
+  background: #FFF5E8;
+  border: 2rpx solid #FF9101;
+}
+.warning .wx-toast-toast>i{
+  color: #FF9101!important;
+}
+.wx-toast-toast{
+  height: 100%;
+  width: 100%;
+  color: #595959;
+  font-size: 26rpx;
+  text-align: center;
+}
+.wx-toast-toast>i{
+  margin-right: 20rpx;
+}

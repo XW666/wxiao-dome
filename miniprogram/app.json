@@ -1,0 +1,25 @@
+{
+  "pages": [
+    "pages/index/index",
+    
+    "pages/demo/index",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "云开发 QuickStart",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "useExtendedLib": {
+    "weui": true
+  },
+  "usingComponents": {
+    "mp-dialog": "/miniprogram_npm/weui-miniprogram/dialog/dialog",
+    "mp-searchbar": "weui-miniprogram/searchbar/searchbar",
+    "mp-icon": "weui-miniprogram/icon/icon",
+    "iconfont":"/iconfont/iconfont"
+  }
+}

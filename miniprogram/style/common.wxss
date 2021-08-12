@@ -1,0 +1,445 @@
+/* 默认颜色 */
+.primary {
+  background-color: #138DD9;
+  color: #fff;
+}
+
+/* 复选框样式 */
+.checkbox_inner {
+  display: inline-block;
+  width: 36rpx;
+  height: 36rpx;
+  background: #FFFFFF;
+  border-radius: 6rpx;
+  border: 1rpx solid #D9D9D9;
+  margin-right: 16rpx;
+  position: relative;
+  cursor: pointer;
+}
+
+/* 选中样式 */
+.is-check>.checkbox_inner::after {
+  box-sizing: content-box;
+  content: "";
+  border: 2rpx solid #fff;
+  border-left: 0;
+  border-top: 0;
+  height: 20rpx;
+  left: 12rpx;
+  position: absolute;
+  top: 4rpx;
+  transform: rotate(45deg) scaleY(0);
+  width: 10rpx;
+  transition: transform .15s ease-in .05s;
+  transform-origin: center;
+}
+
+.is-check>.checkbox_inner {
+  background-color: #4B83F0;
+  border-color: #4B83F0;
+}
+
+.is-check>.checkbox_inner::after {
+  transform: rotate(45deg) scaleY(1);
+}
+/*单选框样式*/
+.radio_inner{
+  display: inline-block;
+  width: 36rpx;
+  height: 36rpx;
+  background: #FFFFFF;
+  border-radius: 50%;
+  border: 1rpx solid #D9D9D9;
+  margin-right: 16rpx;
+  position: relative;
+  cursor: pointer;
+}
+.is-check>.radio_inner::after {
+  box-sizing: content-box;
+  content: "";
+  border: 2rpx solid #fff;
+  border-left: 0;
+  border-top: 0;
+  height: 20rpx;
+  left: 12rpx;
+  position: absolute;
+  top: 4rpx;
+  transform: rotate(45deg) scaleY(0);
+  width: 10rpx;
+  transition: transform .15s ease-in .05s;
+  transform-origin: center;
+}
+
+.is-check>.radio_inner {
+  background-color: #4B83F0;
+  border-color: #4B83F0;
+}
+
+.is-check>.radio_inner::after {
+  transform: rotate(45deg) scaleY(1);
+}
+
+/* 单选部分选中 */
+.is-indeterminate>.radio_inner::before {
+  content: "";
+  position: absolute;
+  display: block;
+  background-color: #fff;
+  height: 4rpx;
+  transform: scale(.5);
+  left: 0;
+  right: 0;
+  top: 17rpx;
+}
+
+.is-indeterminate>.radio_inner {
+  background-color: #4B83F0;
+  border-color: #4B83F0;
+}
+/* //部分选中样式 */
+.is-indeterminate>.checkbox_inner::before {
+  content: "";
+  position: absolute;
+  display: block;
+  background-color: #fff;
+  height: 4rpx;
+  transform: scale(.5);
+  left: 0;
+  right: 0;
+  top: 17rpx;
+}
+
+.is-indeterminate>.checkbox_inner {
+  background-color: #4B83F0;
+  border-color: #4B83F0;
+}
+/* button样式 */
+.button{
+  font-size: 26rpx;
+  font-family: SourceHanSansCN-Regular, SourceHanSansCN;
+  font-weight: 400;
+  color: #FFFFFF;
+  padding: 17rpx 20rpx;
+  display: inline;
+  border: none;
+  border-radius: 8rpx;
+  margin: 0 5rpx;
+}
+.button>i{
+  margin: 0 10rpx;
+}
+.button:after{
+  border: none;
+}
+.button-default{
+  background: #138DD9;
+}
+.button-mini{
+  font-size: 22rpx;
+  padding: 15rpx 16rpx;
+  background: #138DD9;
+}
+.button-layout100{
+  width: 100%;
+  display: block;
+  background: #138DD9;
+  font-size: 30rpx;
+  padding: 28rpx 0;
+  line-height: 30rpx;
+}
+/* 圆角 */
+.br12{border-radius: 12rpx;}
+/*  */
+.button-radius{
+  border-radius:42rpx;
+}
+.button-border{
+  border: 2rpx solid #E2231A;
+  background: none;
+  color: #E2231A;
+}
+.positionR{
+  position: relative;
+}
+/* 复选框样式 */
+.van-checkbox{
+  border-bottom: 2rpx solid #E8E8E8;
+  padding: 15rpx 0;
+}
+.van-checkbox-inline{
+  overflow: hidden;
+  display: block;
+}
+.van-checkbox-inline .van-checkbox{
+  border: none;
+  padding: 0;
+  float: left;
+  margin-right:40rpx;
+}
+/* 下拉 选择样式 */
+.section{
+  width: 100%;
+  display: flex;
+  padding: 24rpx;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+.textCenter{text-align: center;}
+.displayFlex{
+  display: flex;
+}
+.section__title{
+  flex: 1;
+}
+.section_picker{
+  flex: 1;
+  text-align: right;
+}
+.picker{color:#8C8C8C ;}
+/* fontsize */
+.fs22{font-size: 22rpx;}
+.fs26{font-size: 26rpx;}
+.fs30{font-size: 30rpx;}
+.fs32{font-size: 32rpx;}
+/* color */
+.bgFFF{background-color: #FFFFFF;}
+.bgD1{background-color: #D1E9FF;}
+
+.color138{color: #138DD9;}
+.color83B{color: #83B5ED;}
+.colorfff{color:#FFFFFF}
+.color59{color: #595959;}
+.colorDB{color: #DBB70A;}
+.colorA7{color: #A7A7A7;}
+.color8c{color: #8C8C8C;}
+.color609{color: #6098F8}
+.colorBF{color: #BFBFBF}
+
+.colorFC{color: #FCA61E;}
+.colorFD{color: #FD5702;}
+.color3E{color: #3ED256}
+
+.bg609{background-color: #6098F8 !important;}
+/* margin */
+.mr10{margin-right: 10rpx;}
+.mr12{margin-right: 12rpx;}
+.mr20{margin-right: 20rpx;}
+.mr40{margin-right: 40rpx;}
+.mr60{margin-right: 60rpx;}
+.mt10{margin-top: 10rpx;}
+.mt20{margin-top: 20rpx;}
+.mt28{margin-top: 28rpx;}
+.mt30{margin-top: 30rpx;}
+.mt40{margin-top: 40rpx;}
+.mt60{margin-top: 60rpx;}
+.ml20{margin-left: 20rpx;}
+.ml30{margin-left: 30rpx;}
+.mb28{margin-bottom: 28rpx;}
+.mb60{margin-bottom: 60rpx;}
+.mlr30{margin: 0 30rpx;}
+.margin30{margin: 30rpx;}
+/* padding */
+.pl30{padding-left: 30rpx;}
+.pt20{padding-top: 20rpx;}
+.pt28{padding-top: 28rpx;}
+.pt58{padding-top: 58rpx;}
+.pb20{padding-bottom: 20rpx;}
+.pb28{padding-bottom: 28rpx;}
+.pb30{padding-bottom: 30rpx;}
+.pb59{padding-bottom: 59rpx;}
+.pb60{padding-bottom: 60rpx;}
+
+.MenuIconWH32{
+  width: 32rpx;
+  height: 32rpx;
+}
+.width50Percent{
+  width: 50%;
+}
+/*switch*/
+.van-switch--on .van-switch-text{
+  color: #fff;
+}
+/* 单选组织树 */
+.radio-tree{
+  min-width: 500rpx;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.08);
+  border-radius: 4px;
+  font-size: 28rpx;
+  
+}
+.tree-seach{
+  display: flex;
+  height: 80rpx;
+  line-height: 80prx;
+  padding-left: 20rpx;
+  border-bottom: 2rpx solid #E9E9E9;
+}
+.radio-cen{
+  height: 500rpx;
+  overflow: auto;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+
+.tree-node_label{
+  font-size: 28rpx;
+  vertical-align: text-bottom;
+  cursor: pointer;
+}
+.tree-node_tit{
+  padding-left: 40rpx;
+  color: #BFBFBF;
+}
+.tree-seach-no{
+  text-align: center;
+}
+/* //tree 搜素样式 */
+.tree-seach .input{
+  flex: 1;
+  height:80rpx;
+  }
+  .yzm{
+    width: 60rpx;
+    text-align: center;
+   line-height: 80rpx;
+  }
+/*自我信息首页样式*/
+.user-con {
+  width: 100%;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  margin-top: 20rpx;
+}
+.vm{ vertical-align: middle; }
+.user-con > .copyright{
+  position: relative;
+}
+.user-info > .user-footer{
+  width: 100%;
+ z-index: 11;
+  position: fixed;
+  padding:30rpx 0 ;
+  bottom: 0;
+  left: 0;
+  margin: 0 auto;
+  box-sizing: border-box;
+  background-color: #f5f5f5;
+  box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.18);
+}
+.user-dom {
+  border-radius: 12rpx;
+  margin-bottom: 40rpx;
+  padding: 0 24rpx;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+.user-detail{
+  /* padding: 0 24rpx; */
+  box-sizing: border-box;
+}
+.user-pub{
+  border-radius: 12rpx;
+  margin-bottom: 40rpx;
+  background-color: #fff;
+}
+.user-h {
+  width: 100%;
+  display: flex;
+  line-height: 96rpx;
+  color: #141614;
+  border-bottom: 1px solid #e8e8e8
+}
+.uesr-tit {
+  flex: 1;
+  text-align: left;
+}
+
+
+/*自我信息详情样式*/
+.user-c-m{
+  display: flex;
+}
+.user-img{
+  flex: 1;
+}
+.uesr-tit > .icon-font{
+ display: inline-block;
+ vertical-align: text-bottom;
+}
+.user-li{
+  padding: 0 16rpx;
+  box-sizing: border-box;
+}
+.required::before{
+  content: '*';
+  position: absolute;
+  top: 0;
+  left: -16rpx;
+  font-size: 24rpx;
+  font-weight: bold;
+  color:#E2231A ;
+}
+.user-li-dom{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 20rpx;
+  box-sizing: border-box;
+ 
+}
+
+.user-li-img{
+  text-align: center;
+  
+}
+.user-c-img{
+  margin-top: 10rpx;
+}
+.user-c-img > image{
+  width: 200rpx;
+  height: 160rpx;
+  border: 2rpx dashed #D9D9D9;
+  border-radius: 8rpx;
+}
+.fl{float: left;}
+.fr{float: right;}
+.user-border{
+  border-bottom: 1rpx solid #e8e8e8;
+}
+.borderBottom2{
+  border-bottom: 2rpx solid #E8E8E8;
+}
+.user-li-left{
+width: 30%;
+position: relative;
+}
+.textRight{text-align: right;}
+.user-li-right{
+  flex:1;
+  text-align: right;
+  position: relative;
+}
+.user-li-right i{
+  position: absolute;
+  top: 0;
+  right: -32rpx;
+  color: #8C8C8C;
+}
+.picker-color{
+  color: #262626;
+}
+.user-footer{
+  text-align: center;
+  margin-bottom: 40rpx;
+}
+.user-btn{
+  display: inline-block;
+  width: 360rpx;
+  height: 72rpx;
+  background: #2e98ff;
+  border-radius: 12rpx;
+  color: #fff;
+  line-height: 72rpx;
+}
